@@ -1,0 +1,224 @@
+```html
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width,
+                 initial-scale=1.0,
+                 maximum-scale=1.0,
+                 user-scalable=no"
+    >
+
+    <title>Cute Snake Adventure</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+    <div id="game">
+
+        <!-- =========================
+             CANVAS GAME
+        ========================== -->
+
+        <canvas id="canvas"></canvas>
+
+
+        <!-- =========================
+             MENU HOME
+        ========================== -->
+
+        <div
+            class="home-buttons"
+            id="homeButtons"
+        >
+
+            <button
+                class="home-btn start"
+                id="startBtn"
+                type="button"
+            >
+                MULAI GAME
+            </button>
+
+
+            <button
+                class="home-btn exit"
+                id="exitBtn"
+                type="button"
+            >
+                KELUAR
+            </button>
+
+        </div>
+
+
+        <!-- =========================
+             KONTROL HP
+        ========================== -->
+
+        <div
+            class="controls"
+            id="controls"
+        >
+
+            <!-- TOMBOL ATAS -->
+
+            <button
+                class="control up"
+                data-dir="up"
+                type="button"
+            >
+                ↑
+            </button>
+
+
+            <!-- TOMBOL KIRI -->
+
+            <button
+                class="control left"
+                data-dir="left"
+                type="button"
+            >
+                ←
+            </button>
+
+
+            <!-- TOMBOL BAWAH -->
+
+            <button
+                class="control down"
+                data-dir="down"
+                type="button"
+            >
+                ↓
+            </button>
+
+
+            <!-- TOMBOL KANAN -->
+
+            <button
+                class="control right"
+                data-dir="right"
+                type="button"
+            >
+                →
+            </button>
+
+        </div>
+
+
+        <!-- =========================
+             GAME OVER
+        ========================== -->
+
+        <div
+            class="game-over"
+            id="gameOver"
+        >
+
+            <div class="game-panel">
+
+
+                <!-- JUDUL GAME OVER -->
+
+                <h1>
+                    GAME OVER
+                </h1>
+
+
+                <!-- GARIS -->
+
+                <div class="line"></div>
+
+
+                <!-- SKOR AKHIR -->
+
+                <div class="final-score">
+
+                    SKOR AKHIR :
+
+                    <span id="finalScore">
+                        0
+                    </span>
+
+                </div>
+
+
+                <!-- =====================
+                     TOMBOL MAIN LAGI
+                ====================== -->
+
+                <button
+                    id="restartBtn"
+                    class="game-over-btn restart"
+                    type="button"
+                >
+
+                    🔄 MAIN LAGI
+
+                </button>
+
+
+                <!-- =====================
+                     TOMBOL HOME
+                ====================== -->
+
+                <button
+                    id="gameOverHomeBtn"
+                    class="game-over-btn home"
+                    type="button"
+                >
+
+                    🏠 HALAMAN UTAMA
+
+                </button>
+
+
+                <!-- =====================
+                     PETUNJUK
+                ====================== -->
+
+                <div class="game-help">
+
+                    R = Main Lagi
+
+                </div>
+
+
+                <div class="game-help">
+
+                    ESC = Halaman Utama
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         JAVASCRIPT GAME
+    ========================== -->
+
+    <script
+        src="script.js"
+    ></script>
+
+</body>
+
+</html>
+```
