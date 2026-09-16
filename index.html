@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width,
+                 initial-scale=1.0,
+                 maximum-scale=1.0,
+                 user-scalable=no"
+    >
+
+    <title>Cute Snake Adventure</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="game">
+
+        <canvas id="canvas"></canvas>
+
+        <!-- =========================
+             MENU HOME
+        ========================== -->
+
+        <div
+            class="home-buttons"
+            id="homeButtons"
+        >
+
+            <button
+                class="home-btn start"
+                id="startBtn"
+            >
+                MULAI GAME
+            </button>
+
+            <button
+                class="home-btn exit"
+                id="exitBtn"
+            >
+                KELUAR
+            </button>
+
+        </div>
+
+
+        <!-- =========================
+             KONTROL
+        ========================== -->
+
+        <div
+            class="controls"
+            id="controls"
+        >
+
+            <button
+                class="control up"
+                data-dir="up"
+            >
+                ↑
+            </button>
+
+            <button
+                class="control left"
+                data-dir="left"
+            >
+                ←
+            </button>
+
+            <button
+                class="control down"
+                data-dir="down"
+            >
+                ↓
+            </button>
+
+            <button
+                class="control right"
+                data-dir="right"
+            >
+                →
+            </button>
+
+        </div>
+
+
+        <!-- =========================
+             GAME OVER
+        ========================== -->
+
+        <div
+            class="game-over"
+            id="gameOver"
+        >
+
+            <div class="game-panel">
+
+                <h1>
+                    GAME OVER
+                </h1>
+
+                <div class="line"></div>
+
+                <div class="final-score">
+                    SKOR AKHIR :
+                    <span id="finalScore">
+                        0
+                    </span>
+                </div>
+
+                <div class="game-help">
+                    R • Main Lagi
+                </div>
+
+                <div class="game-help">
+                    ESC • Halaman Utama
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

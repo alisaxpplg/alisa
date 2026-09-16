@@ -1,0 +1,492 @@
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+    -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+
+    background: #232837;
+
+    font-family: Arial, sans-serif;
+
+    touch-action: none;
+}
+
+
+body {
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* =========================================
+   GAME CONTAINER
+========================================= */
+
+#game {
+
+    position: relative;
+
+    width: 100vw;
+    height: 100vh;
+
+    overflow: hidden;
+
+    background: #232837;
+}
+
+
+canvas {
+
+    display: block;
+
+    width: 100%;
+    height: 100%;
+}
+
+
+/* =========================================
+   BUTTON UMUM
+========================================= */
+
+button {
+
+    border: none;
+
+    font-family: Arial, sans-serif;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    user-select: none;
+
+    touch-action: manipulation;
+}
+
+
+/* =========================================
+   HOME BUTTON
+========================================= */
+
+.home-buttons {
+
+    position: absolute;
+
+    left: 50%;
+
+    top: calc(50% + 55px);
+
+    transform: translateX(-50%);
+
+    width: min(
+        330px,
+        calc(100% - 70px)
+    );
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 16px;
+}
+
+
+.home-btn {
+
+    width: 100%;
+
+    height: 60px;
+
+    border-radius: 20px;
+
+    color: white;
+
+    font-size: 20px;
+
+    transition: transform 0.08s;
+}
+
+
+.home-btn:active {
+
+    transform: translateY(4px);
+
+}
+
+
+/* START */
+
+.start {
+
+    background: #4169b4;
+
+    border: 3px solid #b4e1ff;
+
+    box-shadow:
+        0 5px #c3d2e6;
+}
+
+
+/* EXIT */
+
+.exit {
+
+    background: #eb4655;
+
+    box-shadow:
+        0 5px #ebbecd;
+}
+
+
+/* =========================================
+   KONTROL ULAR
+========================================= */
+
+.controls {
+
+    position: absolute;
+
+    right: 20px;
+
+    bottom: 20px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 64px);
+
+    grid-template-rows:
+        repeat(2, 64px);
+
+    gap: 8px;
+
+    width: 208px;
+
+    height: 136px;
+}
+
+
+.control {
+
+    width: 64px;
+    height: 64px;
+
+    border-radius: 20px;
+
+    background: #4169b4;
+
+    color: white;
+
+    border: 3px solid #b4e1ff;
+
+    box-shadow:
+        0 5px #c3d2e6;
+
+    font-size: 30px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    transition:
+        transform 0.08s,
+        box-shadow 0.08s;
+}
+
+
+.control:active {
+
+    transform: translateY(4px);
+
+    box-shadow:
+        0 1px #c3d2e6;
+}
+
+
+/* POSISI TOMBOL */
+
+.up {
+
+    grid-column: 2;
+    grid-row: 1;
+
+}
+
+
+.left {
+
+    grid-column: 1;
+    grid-row: 2;
+
+}
+
+
+.down {
+
+    grid-column: 2;
+    grid-row: 2;
+
+}
+
+
+.right {
+
+    grid-column: 3;
+    grid-row: 2;
+
+}
+
+
+/* =========================================
+   GAME OVER
+========================================= */
+
+.game-over {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        rgba(
+            35,
+            40,
+            55,
+            0.65
+        );
+
+    display: none;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 25px;
+}
+
+
+.game-over.show {
+
+    display: flex;
+
+}
+
+
+/* PANEL */
+
+.game-panel {
+
+    width:
+        min(
+            500px,
+            calc(100% - 20px)
+        );
+
+    min-height: 330px;
+
+    background: white;
+
+    border:
+        4px solid #ff91b9;
+
+    border-radius: 28px;
+
+    padding: 30px;
+
+    text-align: center;
+
+    box-shadow:
+        0 10px 30px
+        rgba(0,0,0,0.25);
+}
+
+
+.game-panel h1 {
+
+    color: #eb4655;
+
+    font-size:
+        clamp(
+            30px,
+            6vw,
+            50px
+        );
+}
+
+
+/* GARIS */
+
+.line {
+
+    height: 3px;
+
+    background: #ffd2e1;
+
+    margin:
+        35px 20px 20px;
+}
+
+
+/* SKOR AKHIR */
+
+.final-score {
+
+    color: #4169b4;
+
+    font-size: 22px;
+
+    font-weight: bold;
+
+    margin-bottom: 35px;
+}
+
+
+/* PETUNJUK */
+
+.game-help {
+
+    color: #af7de1;
+
+    font-size: 15px;
+
+    margin: 15px;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .controls {
+
+        right: 12px;
+
+        bottom: 12px;
+
+        grid-template-columns:
+            repeat(3, 55px);
+
+        grid-template-rows:
+            repeat(2, 55px);
+
+        width: 179px;
+
+        height: 118px;
+
+        gap: 7px;
+    }
+
+
+    .control {
+
+        width: 55px;
+
+        height: 55px;
+
+        border-radius: 17px;
+
+        font-size: 26px;
+    }
+
+
+    .home-buttons {
+
+        top: calc(50% + 50px);
+
+        width:
+            min(
+                330px,
+                calc(100% - 50px)
+            );
+    }
+
+
+    .home-btn {
+
+        height: 56px;
+
+        font-size: 18px;
+    }
+
+
+    .game-panel {
+
+        padding: 25px;
+
+        min-height: 300px;
+    }
+
+}
+
+
+/* =========================================
+   HP LANDSCAPE
+========================================= */
+
+@media (
+    max-height: 500px
+) and (
+    orientation: landscape
+) {
+
+    .home-buttons {
+
+        top: 50%;
+
+        transform:
+            translate(-50%, -10%);
+    }
+
+
+    .controls {
+
+        transform: scale(0.8);
+
+        transform-origin:
+            bottom right;
+    }
+
+}
+
+
+/* =========================================
+   DESKTOP
+========================================= */
+
+@media (min-width: 900px) {
+
+    .control:hover {
+
+        filter: brightness(1.1);
+
+    }
+
+
+    .home-btn:hover {
+
+        filter: brightness(1.08);
+
+    }
+
+}
