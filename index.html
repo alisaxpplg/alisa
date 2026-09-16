@@ -2,6 +2,7 @@
 <html lang="id">
 
 <head>
+
     <meta charset="UTF-8">
 
     <meta
@@ -15,13 +16,19 @@
     <title>Cute Snake Adventure</title>
 
     <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
 
     <div id="game">
 
+        <!-- =========================
+             CANVAS GAME
+        ========================== -->
+
         <canvas id="canvas"></canvas>
+
 
         <!-- =========================
              MENU HOME
@@ -39,6 +46,7 @@
                 MULAI GAME
             </button>
 
+
             <button
                 class="home-btn exit"
                 id="exitBtn"
@@ -50,7 +58,7 @@
 
 
         <!-- =========================
-             KONTROL
+             KONTROL HP
         ========================== -->
 
         <div
@@ -58,30 +66,45 @@
             id="controls"
         >
 
+            <!-- ATAS -->
+
             <button
                 class="control up"
                 data-dir="up"
+                type="button"
             >
                 ↑
             </button>
 
+
+            <!-- KIRI -->
+
             <button
                 class="control left"
                 data-dir="left"
+                type="button"
             >
                 ←
             </button>
 
+
+            <!-- BAWAH -->
+
             <button
                 class="control down"
                 data-dir="down"
+                type="button"
             >
                 ↓
             </button>
 
+
+            <!-- KANAN -->
+
             <button
                 class="control right"
                 data-dir="right"
+                type="button"
             >
                 →
             </button>
@@ -100,25 +123,74 @@
 
             <div class="game-panel">
 
+                <!-- JUDUL -->
+
                 <h1>
                     GAME OVER
                 </h1>
 
+
+                <!-- GARIS -->
+
                 <div class="line"></div>
 
+
+                <!-- SKOR -->
+
                 <div class="final-score">
+
                     SKOR AKHIR :
+
                     <span id="finalScore">
                         0
                     </span>
+
                 </div>
 
-                <div class="game-help">
-                    R • Main Lagi
-                </div>
+
+                <!-- =====================
+                     TOMBOL MAIN LAGI
+                ====================== -->
+
+                <button
+                    id="restartBtn"
+                    class="game-over-btn restart"
+                    type="button"
+                >
+
+                    🔄 MAIN LAGI
+
+                </button>
+
+
+                <!-- =====================
+                     TOMBOL HOME
+                ====================== -->
+
+                <button
+                    id="gameOverHomeBtn"
+                    class="game-over-btn home"
+                    type="button"
+                >
+
+                    🏠 HALAMAN UTAMA
+
+                </button>
+
+
+                <!-- PETUNJUK KEYBOARD -->
 
                 <div class="game-help">
-                    ESC • Halaman Utama
+
+                    R = Main Lagi
+
+                </div>
+
+
+                <div class="game-help">
+
+                    ESC = Halaman Utama
+
                 </div>
 
             </div>
@@ -127,6 +199,10 @@
 
     </div>
 
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
 
     <script src="script.js"></script>
 

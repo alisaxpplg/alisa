@@ -4,11 +4,13 @@
 
 * {
     box-sizing: border-box;
+
     margin: 0;
     padding: 0;
 
     -webkit-tap-highlight-color: transparent;
 }
+
 
 html,
 body {
@@ -78,6 +80,9 @@ button {
     user-select: none;
 
     touch-action: manipulation;
+
+    -webkit-user-select: none;
+
 }
 
 
@@ -105,6 +110,8 @@ button {
     flex-direction: column;
 
     gap: 16px;
+
+    z-index: 10;
 }
 
 
@@ -120,13 +127,15 @@ button {
 
     font-size: 20px;
 
-    transition: transform 0.08s;
+    transition:
+        transform 0.08s;
 }
 
 
 .home-btn:active {
 
-    transform: translateY(4px);
+    transform:
+        translateY(4px);
 
 }
 
@@ -137,7 +146,8 @@ button {
 
     background: #4169b4;
 
-    border: 3px solid #b4e1ff;
+    border:
+        3px solid #b4e1ff;
 
     box-shadow:
         0 5px #c3d2e6;
@@ -157,49 +167,80 @@ button {
 
 /* =========================================
    KONTROL ULAR
+   KECIL + TRANSPARAN
 ========================================= */
 
 .controls {
 
     position: absolute;
 
-    right: 20px;
+    right: 14px;
 
-    bottom: 20px;
+    bottom: 14px;
 
     display: grid;
 
     grid-template-columns:
-        repeat(3, 64px);
+        repeat(3, 42px);
 
     grid-template-rows:
-        repeat(2, 64px);
+        repeat(2, 42px);
 
-    gap: 8px;
+    gap: 5px;
 
-    width: 208px;
+    width: 136px;
 
-    height: 136px;
+    height: 89px;
+
+    z-index: 20;
+
+    opacity: 0.75;
 }
 
 
+/* TOMBOL PANAH */
+
 .control {
 
-    width: 64px;
-    height: 64px;
+    width: 42px;
 
-    border-radius: 20px;
+    height: 42px;
 
-    background: #4169b4;
+    border-radius: 12px;
 
-    color: white;
+    /*
+       Transparan
+    */
 
-    border: 3px solid #b4e1ff;
+    background:
+        rgba(
+            65,
+            105,
+            180,
+            0.20
+        );
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.70
+        );
+
+    border:
+        1px solid
+        rgba(
+            180,
+            225,
+            255,
+            0.30
+        );
 
     box-shadow:
-        0 5px #c3d2e6;
+        none;
 
-    font-size: 30px;
+    font-size: 19px;
 
     display: flex;
 
@@ -209,16 +250,25 @@ button {
 
     transition:
         transform 0.08s,
-        box-shadow 0.08s;
+        background 0.08s;
 }
 
 
+/* SAAT DITEKAN */
+
 .control:active {
 
-    transform: translateY(4px);
+    transform:
+        scale(0.90);
 
-    box-shadow:
-        0 1px #c3d2e6;
+    background:
+        rgba(
+            65,
+            105,
+            180,
+            0.40
+        );
+
 }
 
 
@@ -227,6 +277,7 @@ button {
 .up {
 
     grid-column: 2;
+
     grid-row: 1;
 
 }
@@ -235,6 +286,7 @@ button {
 .left {
 
     grid-column: 1;
+
     grid-row: 2;
 
 }
@@ -243,6 +295,7 @@ button {
 .down {
 
     grid-column: 2;
+
     grid-row: 2;
 
 }
@@ -251,6 +304,7 @@ button {
 .right {
 
     grid-column: 3;
+
     grid-row: 2;
 
 }
@@ -271,7 +325,7 @@ button {
             35,
             40,
             55,
-            0.65
+            0.70
         );
 
     display: none;
@@ -280,7 +334,9 @@ button {
 
     justify-content: center;
 
-    padding: 25px;
+    padding: 20px;
+
+    z-index: 100;
 }
 
 
@@ -291,17 +347,19 @@ button {
 }
 
 
-/* PANEL */
+/* =========================================
+   PANEL GAME OVER
+========================================= */
 
 .game-panel {
 
     width:
         min(
-            500px,
+            430px,
             calc(100% - 20px)
         );
 
-    min-height: 330px;
+    min-height: 360px;
 
     background: white;
 
@@ -310,15 +368,22 @@ button {
 
     border-radius: 28px;
 
-    padding: 30px;
+    padding: 28px 25px;
 
     text-align: center;
 
     box-shadow:
         0 10px 30px
-        rgba(0,0,0,0.25);
+        rgba(
+            0,
+            0,
+            0,
+            0.30
+        );
 }
 
+
+/* JUDUL */
 
 .game-panel h1 {
 
@@ -330,45 +395,145 @@ button {
             6vw,
             50px
         );
+
+    margin-bottom: 0;
+
 }
 
 
-/* GARIS */
+/* =========================================
+   GARIS
+========================================= */
 
 .line {
 
     height: 3px;
 
-    background: #ffd2e1;
+    background:
+        #ffd2e1;
 
     margin:
-        35px 20px 20px;
+        22px 20px 20px;
+
 }
 
 
-/* SKOR AKHIR */
+/* =========================================
+   SKOR AKHIR
+========================================= */
 
 .final-score {
 
-    color: #4169b4;
+    color:
+        #4169b4;
 
-    font-size: 22px;
+    font-size: 21px;
 
     font-weight: bold;
 
-    margin-bottom: 35px;
+    margin-bottom: 22px;
+
 }
 
 
-/* PETUNJUK */
+/* =========================================
+   TOMBOL GAME OVER
+========================================= */
+
+.game-over-btn {
+
+    width: 100%;
+
+    height: 52px;
+
+    border-radius: 15px;
+
+    margin-top: 10px;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    transition:
+        transform 0.08s,
+        filter 0.08s;
+
+}
+
+
+/* =========================================
+   TOMBOL MAIN LAGI
+========================================= */
+
+.game-over-btn.restart {
+
+    background:
+        #4169b4;
+
+    color: white;
+
+    border:
+        2px solid #b4e1ff;
+
+    box-shadow:
+        0 4px #c3d2e6;
+
+}
+
+
+.game-over-btn.restart:active {
+
+    transform:
+        translateY(3px);
+
+    box-shadow:
+        0 1px #c3d2e6;
+
+}
+
+
+/* =========================================
+   TOMBOL HOME
+========================================= */
+
+.game-over-btn.home {
+
+    background:
+        #ffd2e1;
+
+    color:
+        #4169b4;
+
+    border:
+        2px solid #ff91b9;
+
+}
+
+
+.game-over-btn.home:active {
+
+    transform:
+        scale(0.97);
+
+    background:
+        #ffc1d5;
+
+}
+
+
+/* =========================================
+   PETUNJUK GAME OVER
+========================================= */
 
 .game-help {
 
-    color: #af7de1;
+    color:
+        #af7de1;
 
-    font-size: 15px;
+    font-size: 13px;
 
-    margin: 15px;
+    margin-top: 10px;
+
 }
 
 
@@ -378,47 +543,62 @@ button {
 
 @media (max-width: 600px) {
 
+
+    /* -------------------------
+       TOMBOL PANAH
+    ------------------------- */
+
     .controls {
 
-        right: 12px;
+        right: 10px;
 
-        bottom: 12px;
+        bottom: 10px;
 
         grid-template-columns:
-            repeat(3, 55px);
+            repeat(3, 38px);
 
         grid-template-rows:
-            repeat(2, 55px);
+            repeat(2, 38px);
 
-        width: 179px;
+        width: 122px;
 
-        height: 118px;
+        height: 81px;
 
-        gap: 7px;
+        gap: 4px;
+
+        opacity: 0.65;
+
     }
 
 
     .control {
 
-        width: 55px;
+        width: 38px;
 
-        height: 55px;
+        height: 38px;
 
-        border-radius: 17px;
+        border-radius: 10px;
 
-        font-size: 26px;
+        font-size: 17px;
+
     }
 
 
+    /* -------------------------
+       HOME
+    ------------------------- */
+
     .home-buttons {
 
-        top: calc(50% + 50px);
+        top:
+            calc(50% + 50px);
 
         width:
             min(
                 330px,
                 calc(100% - 50px)
             );
+
     }
 
 
@@ -427,14 +607,79 @@ button {
         height: 56px;
 
         font-size: 18px;
+
+    }
+
+
+    /* -------------------------
+       GAME OVER
+    ------------------------- */
+
+    .game-over {
+
+        padding: 15px;
+
     }
 
 
     .game-panel {
 
-        padding: 25px;
+        width:
+            calc(100% - 10px);
 
-        min-height: 300px;
+        min-height: 0;
+
+        padding:
+            22px 18px;
+
+        border-width: 3px;
+
+        border-radius: 22px;
+
+    }
+
+
+    .game-panel h1 {
+
+        font-size: 32px;
+
+    }
+
+
+    .line {
+
+        margin:
+            15px 10px;
+
+    }
+
+
+    .final-score {
+
+        font-size: 18px;
+
+        margin-bottom: 15px;
+
+    }
+
+
+    .game-over-btn {
+
+        height: 50px;
+
+        font-size: 16px;
+
+        margin-top: 8px;
+
+    }
+
+
+    .game-help {
+
+        font-size: 12px;
+
+        margin-top: 7px;
+
     }
 
 }
@@ -450,21 +695,99 @@ button {
     orientation: landscape
 ) {
 
+
+    /* HOME */
+
     .home-buttons {
 
         top: 50%;
 
         transform:
-            translate(-50%, -10%);
+            translate(
+                -50%,
+                -10%
+            );
+
     }
 
 
+    .home-btn {
+
+        height: 48px;
+
+        font-size: 16px;
+
+    }
+
+
+    /* KONTROL */
+
     .controls {
 
-        transform: scale(0.8);
+        right: 8px;
+
+        bottom: 8px;
+
+        transform:
+            scale(0.85);
 
         transform-origin:
             bottom right;
+
+    }
+
+
+    /* GAME OVER */
+
+    .game-panel {
+
+        padding:
+            15px 20px;
+
+        max-height:
+            95vh;
+
+        overflow-y:
+            auto;
+
+    }
+
+
+    .game-panel h1 {
+
+        font-size: 28px;
+
+    }
+
+
+    .line {
+
+        margin:
+            10px 15px;
+
+    }
+
+
+    .final-score {
+
+        margin-bottom: 8px;
+
+    }
+
+
+    .game-over-btn {
+
+        height: 43px;
+
+        margin-top: 5px;
+
+    }
+
+
+    .game-help {
+
+        margin-top: 4px;
+
     }
 
 }
@@ -476,16 +799,40 @@ button {
 
 @media (min-width: 900px) {
 
+
     .control:hover {
 
-        filter: brightness(1.1);
+        background:
+            rgba(
+                65,
+                105,
+                180,
+                0.35
+            );
+
+        color:
+            rgba(
+                255,
+                255,
+                255,
+                0.90
+            );
 
     }
 
 
     .home-btn:hover {
 
-        filter: brightness(1.08);
+        filter:
+            brightness(1.08);
+
+    }
+
+
+    .game-over-btn:hover {
+
+        filter:
+            brightness(1.06);
 
     }
 
